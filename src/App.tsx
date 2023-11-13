@@ -87,17 +87,17 @@ const App = () => {
             <h4 className="mb-2">Alert</h4>
             <Button
               type={'success'}
-              label={'Show Success Alert'}
+              label={showAlert[0].show ? 'Hide' : 'Show'}
               onClick={() => changeAlertShow(1)}
             />
             <Button
               type={'warning'}
-              label={'Show Warning Alert'}
+              label={showAlert[1].show ? 'Hide' : 'Show'}
               onClick={() => changeAlertShow(2)}
             />
             <Button
               type={'danger'}
-              label={'Show Danger Alert'}
+              label={showAlert[2].show ? 'Hide' : 'Show'}
               onClick={() => changeAlertShow(3)}
             />
             {showAlert.map((alert) => (
