@@ -3,19 +3,13 @@ import React from 'react';
 interface Props {
   type: string;
   label: string;
-  onClick: React.MouseEventHandler;
+  onClick: React.MouseEventHandler | undefined;
 }
 
 const Button: React.FC<Props> = ({ type, label, onClick }) => {
-  const btnClass: string[] = ['btn'];
-
-  if (type) {
-    btnClass.push(type);
-  }
-
   return (
     <>
-      <button className={'btn ' + btnClass.join('-')} onClick={onClick}>
+      <button className={`me-2 btn btn-${type}`} onClick={onClick}>
         {label}
       </button>
     </>
