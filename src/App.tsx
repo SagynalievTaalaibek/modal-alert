@@ -85,21 +85,16 @@ const App = () => {
           </div>
           <div className="col-6">
             <h4 className="mb-2">Alert</h4>
-            <Button
-              type={'success'}
-              label={showAlert[0].show ? 'Hide' : 'Show'}
-              onClick={() => changeAlertShow(1)}
-            />
-            <Button
-              type={'warning'}
-              label={showAlert[1].show ? 'Hide' : 'Show'}
-              onClick={() => changeAlertShow(2)}
-            />
-            <Button
-              type={'danger'}
-              label={showAlert[2].show ? 'Hide' : 'Show'}
-              onClick={() => changeAlertShow(3)}
-            />
+            {showAlert.map((alert) => {
+              return (
+                <Button
+                  key={alert.id}
+                  type={alert.type}
+                  label={alert.show ? 'Hide' : 'Show'}
+                  onClick={() => changeAlertShow(alert.id)}
+                />
+              );
+            })}
             {showAlert.map((alert) => (
               <Alert
                 key={alert.id}
